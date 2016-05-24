@@ -50,7 +50,7 @@ class WebSiteStatusChecker : TelegramLongPollingBot() {
 
         try {
             if (isTimeout) {
-                val oldTimeout=timeout;
+                val oldTimeout = timeout;
                 timeout = try {
                     Integer.parseInt(text)
                 } catch(e: NumberFormatException) {
@@ -78,6 +78,12 @@ class WebSiteStatusChecker : TelegramLongPollingBot() {
             }
 
             when (text) {
+                "/start" -> {
+                    val message = SendMessage();
+                    message.text = "Bot initialized"
+                    message.chatId = chat_id;
+                    sendMessage(message)
+                }
                 "/verbose" -> {
                     val row = KeyboardRow()
                     row.add(KeyboardButton("ENABLED"))
