@@ -1,0 +1,5 @@
+build
+.gradle
+/.idea
+/src/test
+/src/main/kotlin/com/dvd/kotlin/telegrambots/BotConfig.kt

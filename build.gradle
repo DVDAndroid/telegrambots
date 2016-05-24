@@ -1,0 +1,30 @@
+apply plugin: 'application'
+apply plugin: 'kotlin'
+
+mainClassName = "com.dvd.kotlin.telegrambots.Main"
+
+buildscript {
+    ext.kotlin_version = '1.0.2'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.0.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+dependencies {
+    compile 'com.github.rubenlagus:TelegramBots:v2.3.2'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.1"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+}
